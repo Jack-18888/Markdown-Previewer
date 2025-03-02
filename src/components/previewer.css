@@ -1,0 +1,172 @@
+/* Preview container - takes the right 50% of the parent */
+.preview {
+    width: 50%; /* Takes the right half */
+    height: 100%;
+    overflow: auto; /* Enables scrolling for long content */
+    padding: 20px;
+    background-color: #f8f8f8;
+    color: #333;
+    box-sizing: border-box;
+    position: relative;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth theme transition */
+}
+
+/* Dark mode support */
+.dark-mode .preview {
+    background-color: #1e1e1e; /* Dark mode background */
+    color: #f5f5f5; /* Light text for dark mode */
+}
+
+/* Dark mode scrollbar */
+.dark-mode .preview::-webkit-scrollbar-thumb {
+    background: #666;
+}
+
+/* Styled text inside preview */
+.preview-content {
+    white-space: pre-wrap; /* Preserve formatting but allow wrapping */
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Markdown Styles */
+
+/* Headings */
+.preview h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 5px;
+}
+
+.preview h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 4px;
+}
+
+.preview h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+/* Paragraphs */
+.preview p {
+    margin-bottom: 12px;
+}
+
+/* Links */
+.preview a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.preview a:hover {
+    text-decoration: underline;
+}
+
+/* Dark mode link color */
+.dark-mode .preview a {
+    color: #66aaff;
+}
+
+/* Lists */
+.preview ul {
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.preview ol {
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.preview li {
+    margin-bottom: 5px;
+}
+
+/* Blockquotes */
+.preview blockquote {
+    border-left: 4px solid #ccc;
+    padding-left: 15px;
+    font-style: italic;
+    color: #555;
+    margin: 10px 0;
+}
+
+/* Dark mode blockquote */
+.dark-mode .preview blockquote {
+    border-left: 4px solid #aaa;
+    color: #ddd;
+}
+
+/* Code Blocks */
+.preview pre {
+    background: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+}
+
+/* Dark mode code block */
+.dark-mode .preview pre {
+    background: #2e2e2e;
+    color: #ddd;
+}
+
+/* Inline Code */
+.preview code {
+    background: #eee;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Dark mode inline code */
+.dark-mode .preview code {
+    background: #444;
+    color: #f5f5f5;
+}
+
+/* Images */
+.preview img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+
+/* Tables */
+.preview table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.preview th, .preview td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.preview th {
+    background: #f0f0f0;
+    font-weight: bold;
+}
+
+/* Dark mode table */
+.dark-mode .preview th {
+    background: #333;
+}
+
+.dark-mode .preview td {
+    border: 1px solid #555;
+}
