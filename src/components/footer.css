@@ -1,0 +1,16 @@
+.footer {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    border-top: 1px solid black;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: rgb(216, 255, 242);
+}  
+
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    margin-left: 40px;
+}

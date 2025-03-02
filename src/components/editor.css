@@ -1,0 +1,137 @@
+/* Base styles */
+.editor {
+    position: absolute; /* Stick to top-left */
+    top: 0;
+    left: 0;
+    width: 50%; /* Half of parent width */
+    height: 100%; /* Full height */
+    border-radius: 10px;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+/* Light and Dark Mode */
+.light-mode {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #f5f5f5;
+}
+
+/* Toolbar */
+.toolbar {
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    background-color: inherit;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.light-button,
+.dark-button {
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 5px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.light-button {
+    background: #333;
+    color: #fff;
+}
+
+.dark-button {
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* Editor container */
+.editor-container {
+    display: flex;
+    flex-grow: 1; /* Takes full available height */
+    overflow: auto; /* Enables scrolling */
+}
+
+/* Line numbers */
+.numbers {
+    text-align: right;
+    padding: 10px;
+    padding-right: 15px;
+    font-size: 14px;
+    line-height: 20px; /* Matches textarea line height */
+    user-select: none;
+    color: #888;
+    background: rgba(0, 0, 0, 0.05);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    min-width: 40px; /* Fixed width for line numbers */
+}
+
+.dark-mode .numbers {
+    color: #bbb;
+    background: rgba(255, 255, 255, 0.1);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Syncing line height with textarea */
+.numbers span {
+    display: block;
+    height: 20px; /* Matches textarea line height */
+}
+
+/* Textarea with X and Y scrolling */
+textarea {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 10px;
+    font-size: 14px;
+    line-height: 20px; /* Matches numbers span */
+    border: none;
+    outline: none;
+    background: transparent;
+    color: inherit;
+    font-family: monospace;
+    overflow-x: auto; /* Enables horizontal scrollbar */
+    overflow-y: auto; /* Enables vertical scrollbar */
+    white-space: pre; /* Keeps long lines intact without wrapping */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #aaa transparent; /* Firefox */
+}
+
+/* Custom Scrollbar (for Webkit-based browsers) */
+textarea::-webkit-scrollbar {
+    width: 6px; /* Vertical scrollbar */
+    height: 6px; /* Horizontal scrollbar */
+}
+
+textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #aaa;
+    border-radius: 3px;
+}
+
+.dark-mode textarea::-webkit-scrollbar-thumb {
+    background: #666;
+}
+
+/* Placeholder text color */
+textarea::placeholder {
+    color: #aaa;
+}
+
+.dark-mode textarea::placeholder {
+    color: #777;
+}
